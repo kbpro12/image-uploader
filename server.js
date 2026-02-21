@@ -30,4 +30,6 @@ app.post('/upload', upload.single('myImage'), (req, res) => {
     res.json({ url: fileUrl });
 });
 
-app.listen(3000, () => console.log('🚀 Server ready at http://localhost:3000'));
+
+const PORT = process.env.PORT || 3000; // Use the cloud's port or 3000 locally
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
